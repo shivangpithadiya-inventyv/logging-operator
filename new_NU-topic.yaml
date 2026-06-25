@@ -1,0 +1,600 @@
+apiVersion: v1
+items:
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: audiofiletranscription
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"audiofiletranscription","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io audiofiletranscription"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"audiofiletranscription","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"audiofiletranscription"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io audiofiletranscription
+    creationTimestamp: "2026-02-25T07:09:07Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: audiofiletranscription
+    namespace: ns-data
+    resourceVersion: "137672"
+    uid: 7abdd38c-c39e-4166-84aa-aac0f949a283
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: audiofiletranscription
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:09:07.263711722Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: XXNTxwOCTNWgu8NQjxxHyw
+    topicName: audiofiletranscription
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: downloadedvoicefiles
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"downloadedvoicefiles","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io downloadedvoicefiles"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"downloadedvoicefiles","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"DownloadedVoiceFiles"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io downloadedvoicefiles
+    creationTimestamp: "2026-02-25T07:09:36Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: downloadedvoicefiles
+    namespace: ns-data
+    resourceVersion: "137794"
+    uid: aff74a2f-4202-4476-857e-d55e4be71a3f
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: DownloadedVoiceFiles
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:09:36.466850523Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: D_306P4aTXeTYQXVjENsqw
+    topicName: DownloadedVoiceFiles
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: downloadvoicefilequeue
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"downloadvoicefilequeue","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io downloadvoicefilequeue"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"downloadvoicefilequeue","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"DownloadVoiceFileQueue"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io downloadvoicefilequeue
+    creationTimestamp: "2026-02-25T07:08:54Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: downloadvoicefilequeue
+    namespace: ns-data
+    resourceVersion: "137620"
+    uid: 1da22eed-6c9f-4332-9553-1583a6416595
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: DownloadVoiceFileQueue
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:08:54.699844887Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: ZB8DYK6WR-SyjZnyQJ38Gw
+    topicName: DownloadVoiceFileQueue
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: dr-accessaudit
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"dr-accessaudit","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io dr-accessaudit"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"dr-accessaudit","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":3,"topicName":"dr_accessaudit"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io dr-accessaudit
+    creationTimestamp: "2026-05-07T11:41:51Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: dr-accessaudit
+    namespace: ns-data
+    resourceVersion: "29799867"
+    uid: 2e28a2b4-a890-407b-a643-8088acf9e66a
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 3
+    topicName: dr_accessaudit
+  status:
+    conditions:
+    - lastTransitionTime: "2026-05-07T11:41:51.558272980Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: wO37mhV-Sv2nkFFqoGG4-g
+    topicName: dr_accessaudit
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: flumebackuplogs
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"flumebackuplogs","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io flumebackuplogs"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"flumebackuplogs","namespace":"ns-data"},"spec":{"config":{},"partitions":1,"replicas":1,"topicName":"FlumeBackupLogs"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io flumebackuplogs
+    creationTimestamp: "2026-02-25T07:08:40Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: flumebackuplogs
+    namespace: ns-data
+    resourceVersion: "137559"
+    uid: 731dbe86-c71c-4900-94a6-c72ced07a2aa
+  spec:
+    config: {}
+    partitions: 1
+    replicas: 1
+    topicName: FlumeBackupLogs
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:08:40.788080212Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: By3KVzC5T7i7a5nQtOjmWw
+    topicName: FlumeBackupLogs
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: idraclog
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"idraclog","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io idraclog"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"idraclog","namespace":"ns-data"},"spec":{"config":{},"partitions":1,"replicas":1,"topicName":"idraclog"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io idraclog
+    creationTimestamp: "2026-02-25T07:09:59Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 3
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: idraclog
+    namespace: ns-data
+    resourceVersion: "29274742"
+    uid: df8182ca-37ea-4f48-b449-bcff13282980
+  spec:
+    config: {}
+    partitions: 1
+    replicas: 1
+    topicName: idraclog
+  status:
+    conditions:
+    - lastTransitionTime: "2026-05-06T08:50:56.902238812Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 3
+    topicId: cFLb4or5SomWlnP58oGCfQ
+    topicName: idraclog
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: kafka-connect-configs
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"kafka-connect-configs","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io kafka-connect-configs"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"kafka-connect-configs","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"kafka_connect_configs"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io kafka-connect-configs
+    creationTimestamp: "2026-05-06T05:42:14Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: kafka-connect-configs
+    namespace: ns-data
+    resourceVersion: "29209842"
+    uid: 6c3a0217-9bf6-410e-9dc7-2d3abffb7b26
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: kafka_connect_configs
+  status:
+    conditions:
+    - lastTransitionTime: "2026-05-06T05:42:14.134234771Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: 2pjGU5dPRV26j38UCgkrTg
+    topicName: kafka_connect_configs
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: kafka-connect-offsets
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"kafka-connect-offsets","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io kafka-connect-offsets"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"kafka-connect-offsets","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":25,"replicas":1,"topicName":"kafka_connect_offsets"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io kafka-connect-offsets
+    creationTimestamp: "2026-05-06T05:40:29Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: kafka-connect-offsets
+    namespace: ns-data
+    resourceVersion: "29209264"
+    uid: d66b7e7b-b48a-4901-8fb7-88c38482e957
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 25
+    replicas: 1
+    topicName: kafka_connect_offsets
+  status:
+    conditions:
+    - lastTransitionTime: "2026-05-06T05:40:29.127773157Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: 7QiJCKNJSz-hwQbt_tVrYQ
+    topicName: kafka_connect_offsets
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: kafka-connect-status
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"kafka-connect-status","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io kafka-connect-status"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"kafka-connect-status","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"kafka_connect_status"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io kafka-connect-status
+    creationTimestamp: "2026-05-06T05:40:59Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: kafka-connect-status
+    namespace: ns-data
+    resourceVersion: "29209434"
+    uid: 21063748-02f7-484a-8277-c82342cb6194
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: kafka_connect_status
+  status:
+    conditions:
+    - lastTransitionTime: "2026-05-06T05:40:59.600279887Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: ceB2VzO8Q6KZwDWAUnHS1Q
+    topicName: kafka_connect_status
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: miniorangelog
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"miniorangelog","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io miniorangelog"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"miniorangelog","namespace":"ns-data"},"spec":{"config":{},"partitions":1,"replicas":3,"topicName":"miniorangelog"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io miniorangelog
+    creationTimestamp: "2026-06-18T12:15:43Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: miniorangelog
+    namespace: ns-data
+    resourceVersion: "49322619"
+    uid: cfee4ae3-65e4-4a96-b6ed-0d1670e376a1
+  spec:
+    config: {}
+    partitions: 1
+    replicas: 3
+    topicName: miniorangelog
+  status:
+    conditions:
+    - lastTransitionTime: "2026-06-18T12:15:44.430614668Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: WRRpFevRSrSi0y6oO9YJMA
+    topicName: miniorangelog
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: missingvoicefiles
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"missingvoicefiles","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io missingvoicefiles"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"missingvoicefiles","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"MissingVoiceFiles"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io missingvoicefiles
+    creationTimestamp: "2026-02-25T07:09:21Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: missingvoicefiles
+    namespace: ns-data
+    resourceVersion: "137734"
+    uid: 73ac38d4-830e-489e-b6b7-903231db45bb
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: MissingVoiceFiles
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:09:21.515538194Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: UOGlS30uRLimMVSE3xrsAA
+    topicName: MissingVoiceFiles
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: supportcallsummarization
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"supportcallsummarization","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io supportcallsummarization"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"supportcallsummarization","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"supportcallsummarization"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io supportcallsummarization
+    creationTimestamp: "2026-03-11T05:24:03Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: supportcallsummarization
+    namespace: ns-data
+    resourceVersion: "5771609"
+    uid: cce9b525-ef3c-4405-8e57-9d9bb91cb272
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: supportcallsummarization
+  status:
+    conditions:
+    - lastTransitionTime: "2026-03-11T05:24:03.486196415Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: DxteZCMvRJauiKqcDGCm6g
+    topicName: supportcallsummarization
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: supportcalltranscription
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"supportcalltranscription","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io supportcalltranscription"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"supportcalltranscription","namespace":"ns-data"},"spec":{"config":{"cleanup.policy":"compact","compression.type":"gzip","min.cleanable.dirty.ratio":0.1,"segment.bytes":1048576},"partitions":1,"replicas":1,"topicName":"supportcalltranscription"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io supportcalltranscription
+    creationTimestamp: "2026-03-11T05:23:30Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: supportcalltranscription
+    namespace: ns-data
+    resourceVersion: "5771458"
+    uid: 162b3e8c-dd53-4630-a5f3-172db0a26398
+  spec:
+    config:
+      cleanup.policy: compact
+      compression.type: gzip
+      min.cleanable.dirty.ratio: 0.1
+      segment.bytes: 1048576
+    partitions: 1
+    replicas: 1
+    topicName: supportcalltranscription
+  status:
+    conditions:
+    - lastTransitionTime: "2026-03-11T05:23:30.870162207Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: sRlgSTnHS0ybFO1kEEZ--Q
+    topicName: supportcalltranscription
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: suricatalog
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"suricatalog","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io suricatalog"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"suricatalog","namespace":"ns-data"},"spec":{"config":{},"partitions":1,"replicas":3,"topicName":"suricatalog"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io suricatalog
+    creationTimestamp: "2026-06-19T06:12:32Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: suricatalog
+    namespace: ns-data
+    resourceVersion: "49670565"
+    uid: be218876-4d4c-4d13-8cef-5e5842c5a628
+  spec:
+    config: {}
+    partitions: 1
+    replicas: 3
+    topicName: suricatalog
+  status:
+    conditions:
+    - lastTransitionTime: "2026-06-19T06:14:19.997129837Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: sd1-9XKCRaG8RjPNl9mdoQ
+    topicName: suricatalog
+- apiVersion: kafka.strimzi.io/v1
+  kind: KafkaTopic
+  metadata:
+    annotations:
+      artifact.spinnaker.io/location: ns-data
+      artifact.spinnaker.io/name: syslog
+      artifact.spinnaker.io/type: kubernetes/KafkaTopic.kafka.strimzi.io
+      artifact.spinnaker.io/version: ""
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"kafka.strimzi.io/v1beta2","kind":"KafkaTopic","metadata":{"annotations":{"artifact.spinnaker.io/location":"ns-data","artifact.spinnaker.io/name":"syslog","artifact.spinnaker.io/type":"kubernetes/KafkaTopic.kafka.strimzi.io","artifact.spinnaker.io/version":"","moniker.spinnaker.io/application":"infra-kafka-topic-nu","moniker.spinnaker.io/cluster":"KafkaTopic.kafka.strimzi.io syslog"},"labels":{"app.kubernetes.io/managed-by":"spinnaker","app.kubernetes.io/name":"infra-kafka-topic-nu","strimzi.io/cluster":"nu-data"},"name":"syslog","namespace":"ns-data"},"spec":{"config":{},"partitions":1,"replicas":1,"topicName":"syslog"}}
+      moniker.spinnaker.io/application: infra-kafka-topic-nu
+      moniker.spinnaker.io/cluster: KafkaTopic.kafka.strimzi.io syslog
+    creationTimestamp: "2026-02-25T07:09:47Z"
+    finalizers:
+    - strimzi.io/topic-operator
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: spinnaker
+      app.kubernetes.io/name: infra-kafka-topic-nu
+      strimzi.io/cluster: nu-data
+    name: syslog
+    namespace: ns-data
+    resourceVersion: "137847"
+    uid: 9c903246-fb4f-48dd-aa76-9332daa18142
+  spec:
+    config: {}
+    partitions: 1
+    replicas: 1
+    topicName: syslog
+  status:
+    conditions:
+    - lastTransitionTime: "2026-02-25T07:09:47.903388660Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    topicId: ON0W2ivqRbuiy_XSCnNKYQ
+    topicName: syslog
+kind: List
+metadata:
+  resourceVersion: ""
