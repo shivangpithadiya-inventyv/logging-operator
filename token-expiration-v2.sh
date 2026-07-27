@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 now=$(date -u +%s)
+tmpdir=$(mktemp -d)
 
 kubectl get pods -A -o json | jq -r '
   .items[] |
@@ -9,42 +10,49 @@ kubectl get pods -A -o json | jq -r '
     any(.spec.initContainers[]?; .name=="istio-proxy")
   ) |
   "\(.metadata.namespace) \(.metadata.name)"
-' | sort -u > /tmp/pods_list.txt
+' | sort -u > "$tmpdir/pods_list.txt"
 
-echo "Total unique pods with istio-proxy: $(wc -l < /tmp/pods_list.txt)"
+total=$(wc -l < "$tmpdir/pods_list.txt")
+echo "Total unique pods with istio-proxy: $total"
 
-check_pod() {
-  ns="$1"
-  pod="$2"
-  now=$(date -u +%s)
+i=0
+maxjobs=30
 
-  token=$(kubectl exec -n "$ns" "$pod" -c istio-proxy -- \
-    cat /var/run/secrets/tokens/istio-token 2>/dev/null)
-  [ -z "$token" ] && return
+while read -r ns pod; do
+  [ -z "$ns" ] && continue
+  i=$((i+1))
 
-  exp=$(python3 -c "
-import base64, json
-token = '''$token'''.strip()
-try:
-    payload = token.split('.')[1]
-    padded = payload + '=' * (-len(payload) % 4)
-    data = json.loads(base64.urlsafe_b64decode(padded))
-    print(data.get('exp',''))
-except Exception:
-    print('')
-" 2>/dev/null)
+  (
+    now=$(date -u +%s)
+    token=$(kubectl exec -n "$ns" "$pod" -c istio-proxy -- \
+      cat /var/run/secrets/tokens/istio-token 2>/dev/null)
+    [ -z "$token" ] && exit 0
 
-  [ -z "$exp" ] && return
+    payload=$(echo "$token" | cut -d. -f2)
+    padded=$(echo "$payload" | tr '_-' '/+')
+    mod=$(( ${#padded} % 4 ))
+    [ "$mod" = "2" ] && padded="${padded}=="
+    [ "$mod" = "3" ] && padded="${padded}="
 
-  secs_left=$(( exp - now ))
-  exp_human=$(date -u -d @"$exp" +"%Y-%m-%d %H:%M:%S")
-  printf "%s\t%s\t%s\t%s\n" "$ns" "$pod" "$exp_human" "$secs_left"
-}
-export -f check_pod
+    exp=$(echo "$padded" | base64 -d 2>/dev/null | jq -r '.exp' 2>/dev/null)
+    [ -z "$exp" ] || [ "$exp" = "null" ] && exit 0
+
+    secs_left=$(( exp - now ))
+    exp_human=$(date -u -d @"$exp" +"%Y-%m-%d %H:%M:%S")
+    printf "%s\t%s\t%s\t%s\n" "$ns" "$pod" "$exp_human" "$secs_left" > "$tmpdir/result_$i.txt"
+  ) &
+
+  # throttle: wait if we've hit maxjobs concurrent background jobs
+  if [ $(( i % maxjobs )) -eq 0 ]; then
+    wait
+  fi
+
+done < "$tmpdir/pods_list.txt"
+
+wait
 
 echo "---- TOP 10 SOONEST TO EXPIRE ----"
 printf "NAMESPACE\tPOD\tEXP_UTC\t\tSECS_LEFT\n"
+cat "$tmpdir"/result_*.txt 2>/dev/null | sort -t'	' -k4 -n | head -10
 
-cat /tmp/pods_list.txt | xargs -P 30 -n2 bash -c 'check_pod "$@"' _ \
-  | sort -t$'\t' -k4 -n \
-  | head -10
+rm -rf "$tmpdir"
