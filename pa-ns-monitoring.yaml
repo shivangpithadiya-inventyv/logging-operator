@@ -1,0 +1,71 @@
+apiVersion: v1
+items:
+- apiVersion: security.istio.io/v1
+  kind: PeerAuthentication
+  metadata:
+    name: default
+    namespace: ns-monitoring
+  spec:
+    mtls:
+      mode: STRICT
+- apiVersion: security.istio.io/v1
+  kind: PeerAuthentication
+  metadata:
+    name: pa-alertmanager-permissive-port
+    namespace: ns-monitoring
+  spec:
+    mtls:
+      mode: STRICT
+    portLevelMtls:
+      "8080":
+        mode: PERMISSIVE
+      "9093":
+        mode: PERMISSIVE
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: alertmanager
+- apiVersion: security.istio.io/v1
+  kind: PeerAuthentication
+  metadata:
+    name: pa-grafana-permissive-port
+    namespace: ns-monitoring
+  spec:
+    mtls:
+      mode: STRICT
+    portLevelMtls:
+      "3000":
+        mode: PERMISSIVE
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: grafana
+- apiVersion: security.istio.io/v1
+  kind: PeerAuthentication
+  metadata:
+    name: pa-kube-state-metrics-permissive
+    namespace: ns-monitoring
+  spec:
+    mtls:
+      mode: STRICT
+    portLevelMtls:
+      "8080":
+        mode: PERMISSIVE
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: kube-state-metrics
+- apiVersion: security.istio.io/v1
+  kind: PeerAuthentication
+  metadata:
+    name: pa-prometheus-permissive
+    namespace: ns-monitoring
+  spec:
+    mtls:
+      mode: STRICT
+    portLevelMtls:
+      "10250":
+        mode: PERMISSIVE
+    selector:
+      matchLabels:
+        app.kubernetes.io/component: prometheus-operator
+kind: List
+metadata:
+  resourceVersion: ""
