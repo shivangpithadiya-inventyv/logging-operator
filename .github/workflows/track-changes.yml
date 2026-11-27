@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   track-changes:
-    runs-on: [sh-test-runner, sh-test-runner2]       # new ARC: scale set name
+    runs-on: [sh-test-runner || sh-test-runner2]       # new ARC: scale set name
     # runs-on: [self-hosted, my-runner]   # legacy summerwind: use this instead
     steps:
       - name: Checkout repo
