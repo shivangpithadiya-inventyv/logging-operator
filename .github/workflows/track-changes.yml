@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   track-changes:
-    runs-on: sh-buildenv       # new ARC: scale set name
+    runs-on: sh-test-runner       # new ARC: scale set name
     # runs-on: [self-hosted, my-runner]   # legacy summerwind: use this instead
     steps:
       - name: Checkout repo
