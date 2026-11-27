@@ -1,0 +1,46 @@
+name: Track shivang.txt changes
+
+on:
+  push:
+    paths:
+      - shivang.txt          # only runs when this file changes
+
+permissions:
+  contents: write            # needed so the workflow can push output.txt
+
+jobs:
+  track-changes:
+    runs-on: sh-buildenv       # new ARC: scale set name
+    # runs-on: [self-hosted, my-runner]   # legacy summerwind: use this instead
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # full history so we can diff against the previous commit
+
+      - name: Generate output.txt
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # On the very first push there is no previous commit, so diff against an empty tree
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE=$(git hash-object -t tree /dev/null)
+          fi
+
+          {
+            echo "Changes made in shivang.txt"
+            echo "Commit : $GITHUB_SHA"
+            echo "Author : $(git log -1 --format='%an')"
+            echo "Date   : $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            echo "-----------------------------------------"
+            git diff --unified=0 "$BEFORE" "$GITHUB_SHA" -- shivang.txt
+          } > output.txt
+
+          cat output.txt
+
+      - name: Commit output.txt
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output.txt
+          git diff --cached --quiet || (git commit -m "Update output.txt with latest shivang.txt changes" && git push)
